@@ -1,0 +1,26 @@
+name: "AWS VPC"
+provider: "aws"
+description: "VPC AWS avec des sous-réseaux publics et privés"
+parameters:
+  - name: "region"
+    description: "Région AWS"
+    default: "us-east-1"
+    required: true
+  - name: "vpc_cidr"
+    description: "CIDR block pour le VPC"
+    default: "10.0.0.0/16"
+    required: true
+  - name: "public_subnet_cidr"
+    description: "CIDR block pour le sous-réseau public"
+    default: "10.0.1.0/24"
+    required: false
+  - name: "private_subnet_cidr"
+    description: "CIDR block pour le sous-réseau privé"
+    default: "10.0.2.0/24"
+    required: false
+  - name: "tags"
+    description: "Tags pour les ressources"
+    default: "Name=cloudya-vpc"
+    required: false
+platforms:
+  - aws

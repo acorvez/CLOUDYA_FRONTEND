@@ -1,0 +1,64 @@
+/* cloudya/css/chat.tcss */
+
+Screen {
+    background: $surface;
+}
+
+#chat-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1;
+}
+
+#input-container {
+    width: 100%;
+    height: 3;
+    padding: 0 1;
+    background: $panel;
+    border-top: heavy $primary;
+}
+
+#status-bar {
+    width: 100%;
+    height: 1;
+    background: $primary-darken-1;
+    color: $text;
+    text-align: center;
+}
+
+Input {
+    border: tall $primary;
+    background: $surface;
+    height: 1;
+    padding: 0 1;
+}
+
+UserMessage {
+    margin: 1 0;
+}
+
+AssistantMessage {
+    margin: 1 0;
+}
+
+SystemMessage {
+    margin: 1 0;
+    color: $text-muted;
+}
+
+CodeSnippet {
+    margin: 1 0;
+}
+
+CommandResult {
+    margin: 1 0;
+}
+
+Header {
+    background: $primary-darken-2;
+}
+
+Footer {
+    background: $primary-darken-2;
+}

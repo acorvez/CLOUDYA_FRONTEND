@@ -1,0 +1,56 @@
+# Fichiers générés
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environnements Python
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Fichiers de configuration locale
+.env.local
+.env.*.local
+.cloudya/
+
+# Fichiers d'IDE et d'éditeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Fichiers macOS
+.DS_Store
+
+# Fichiers Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Fichiers spécifiques à Cloudya
+data/
+logs/
+deployments/

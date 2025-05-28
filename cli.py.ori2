@@ -1,0 +1,61 @@
+import typer
+import os
+import sys
+import subprocess
+
+# Application principale
+app = typer.Typer(help="Cloudya - CLI DevOps intelligente pour l'automatisation cloud")
+
+@app.command()
+def version():
+    """
+    Affiche la version actuelle de Cloudya
+    """
+    print("Cloudya v0.1.0")
+    print("Mode: CLI locale (sans IA)")
+
+# Rediriger les commandes vers les scripts Python correspondants
+def run_command(command_name, args):
+    """
+    Exécute un script de commande avec les arguments donnés
+    """
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    command_path = os.path.join(current_dir, 'commands', f'{command_name}.py')
+    
+    if not os.path.exists(command_path):
+        print(f"Erreur: Commande '{command_name}' non trouvée.")
+        return
+    
+    # Exécuter le script avec subprocess
+    result = subprocess.run([sys.executable, command_path] + args)
+    return result.returncode
+
+def main():
+    # Si aucun argument n'est fourni, ou si c'est --help ou --version, utiliser typer
+    if len(sys.argv) == 1 or sys.argv[1].startswith("-"):
+        app()
+        return
+    
+    # Sinon, extraire la commande et les arguments
+    command = sys.argv[1]
+    args = sys.argv[2:]
+    
+    # Commandes spéciales traitées par typer
+    if command == "version":
+        app(["version"])
+        return
+    
+    # Commandes qui sont redirigées vers les scripts Python correspondants
+    commands = ["deploy", "app", "diagnose", "monitor", "hello", "chat"]
+    
+    if command in commands:
+        # Rediriger vers le script Python
+        return run_command(command, args)
+    else:
+        # Commande inconnue, afficher l'aide
+        print(f"Commande inconnue: {command}")
+        app(["--help"])
+        return 1
+
+if __name__ == "__main__":
+    sys.exit(main() or 0)
