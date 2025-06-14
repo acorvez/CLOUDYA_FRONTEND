@@ -13,17 +13,10 @@ from rich.console import Console
 from rich.prompt import Prompt, Confirm, IntPrompt
 from rich.table import Table
 
-# Importer les sous-modules
+# Importer seulement les sous-modules qui n'ont pas d'import circulaire
 from .ansible_inventory import prepare_inventory
-from .ansible_apps import get_available_apps, get_app_info
-from .ansible_deployment import (
-    prepare_app_deployment,
-    deploy_ansible_app,
-    deploy_docker_app,
-    get_app_deployment,
-    list_app_deployments,
-    uninstall_app
-)
+# SUPPRIMÉ: from .ansible_apps import get_available_apps, get_app_info
+# SUPPRIMÉ: from .ansible_deployment import (...)
 from .ansible_instances import get_terraform_instances, select_instance
 
 console = Console()

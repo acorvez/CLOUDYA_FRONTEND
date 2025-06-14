@@ -1,8 +1,12 @@
-# Fichiers générés
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -21,7 +25,61 @@ wheels/
 *.egg
 MANIFEST
 
-# Environnements Python
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 .env
 .venv
 env/
@@ -30,27 +88,40 @@ ENV/
 env.bak/
 venv.bak/
 
-# Fichiers de configuration locale
-.env.local
-.env.*.local
-.cloudya/
+# Spyder project settings
+.spyderproject
+.spyproject
 
-# Fichiers d'IDE et d'éditeurs
-.idea/
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Cloudya specific
+.cloudya/
+*.tfstate
+*.tfstate.backup
+*.terraform/
+.terraform.lock.hcl
+
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
 
-# Fichiers macOS
+# OS
 .DS_Store
-
-# Fichiers Windows
 Thumbs.db
-ehthumbs.db
-Desktop.ini
 
-# Fichiers spécifiques à Cloudya
-data/
-logs/
-deployments/
+# Backup files
+*.bak
+*.backup
+*~

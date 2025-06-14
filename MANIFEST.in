@@ -1,0 +1,50 @@
+# MANIFEST.in - Définit les fichiers à inclure dans le package Python
+
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+
+# Configuration
+include cloudya/config/*.yaml
+include cloudya/config/*.yml
+
+# Templates Terraform
+recursive-include cloudya/templates/terraform *.tf
+recursive-include cloudya/templates/terraform *.tfvars
+recursive-include cloudya/templates/terraform *.yaml
+recursive-include cloudya/templates/terraform *.yml
+
+# Templates Ansible
+recursive-include cloudya/templates/ansible *.yml
+recursive-include cloudya/templates/ansible *.yaml
+recursive-include cloudya/templates/ansible *.j2
+
+# Templates d'applications
+recursive-include cloudya/templates/apps *.yml
+recursive-include cloudya/templates/apps *.yaml
+recursive-include cloudya/templates/apps *.json
+recursive-include cloudya/templates/apps *.docker-compose.yml
+recursive-include cloudya/templates/apps Dockerfile
+
+# Scripts et utilitaires
+include cloudya/scripts/*.sh
+include cloudya/scripts/*.py
+
+# Documentation
+recursive-include docs *.rst
+recursive-include docs *.md
+recursive-include docs Makefile
+
+# Exclure les fichiers de développement
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~
+global-exclude *.so
+global-exclude .git*
+global-exclude __pycache__
+global-exclude *.egg-info
+prune tests
+prune .pytest_cache
+prune .coverage
+prune htmlcov

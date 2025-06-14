@@ -5,9 +5,23 @@ import os
 import yaml
 from rich.console import Console
 
-from .ansible import get_apps_dir
-
 console = Console()
+
+def get_apps_dir():
+    """
+    Récupère le répertoire des applications (copie de la fonction pour éviter l'import circulaire)
+    """
+    # Charger la configuration
+    from .config import load_config
+    config = load_config()
+    
+    templates_dir = config.get("templates_dir", os.path.expanduser("~/.cloudya/templates"))
+    apps_dir = os.path.join(templates_dir, "apps")
+    
+    # Créer le répertoire s'il n'existe pas
+    os.makedirs(apps_dir, exist_ok=True)
+    
+    return apps_dir
 
 def get_available_apps():
     """
